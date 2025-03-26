@@ -2,6 +2,7 @@ package com.RIDdev.safealert;
 
 import android.content.Context;
 import android.telephony.SmsManager;
+import android.util.Log;
 import android.widget.Toast;
 
 public class SMSMan {
@@ -18,8 +19,9 @@ public class SMSMan {
         for (String contact : cont) {
             try {
                 smsMan.sendTextMessage(contact, null, msg, null, null);
+                Log.d("SMS",msg);
             } catch (Exception e) {
-
+                Log.d("Error",""+e);
             }
         }
     }
